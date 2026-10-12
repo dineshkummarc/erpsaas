@@ -1,0 +1,42 @@
+@import '../../vendor/filament/filament/resources/css/theme.css';
+
+@layer base {
+    .guava-fi-cl-cluster.vertical > div > .fi-fo-component-ctn > div:not(:last-child) {
+        @apply !border-e-0 !border-b;
+    }
+
+    .guava-fi-cl-cluster.horizontal > div > .fi-fo-component-ctn > div:not(:last-child) {
+        @apply !border-b-0 !border-e;
+    }
+
+    .guava-fi-cl-cluster .fi-fo-component-ctn > div {
+        @apply !border-gray-200 !pe-0 dark:!border-white/10;
+    }
+
+    .guava-fi-cl-cluster {
+        &:focus-within {
+            @apply !ring-1 !ring-gray-950/10 dark:!ring-white/20;
+        }
+
+        & .fi-input-wrp {
+            @apply !bg-transparent;
+        }
+
+        & .fi-input-wrp:not(.ring-danger-600):not(.dark\:ring-danger-500) {
+            @apply !ring-0;
+        }
+
+        & .fi-fo-component-ctn {
+            @apply !gap-0;
+
+            .fi-input-wrp {
+                @apply !shadow-none;
+            }
+
+            .fi-input-wrp:not(.guava-fi-cl-cluster):focus-within {
+                @apply !ring-2;
+            }
+        }
+    }
+
+}

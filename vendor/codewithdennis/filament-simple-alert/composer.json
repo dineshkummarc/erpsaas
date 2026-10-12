@@ -1,0 +1,69 @@
+{
+    "name": "codewithdennis/filament-simple-alert",
+    "description": "A plugin for adding straightforward alerts to your filament pages",
+    "keywords": [
+        "CodeWithDennis",
+        "laravel",
+        "filament-simple-alert"
+    ],
+    "homepage": "https://github.com/codewithdennis/filament-simple-alert",
+    "support": {
+        "issues": "https://github.com/codewithdennis/filament-simple-alert/issues",
+        "source": "https://github.com/codewithdennis/filament-simple-alert"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CodeWithDennis",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.16",
+        "nunomaduro/collision": "^7.9",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.1",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeWithDennis\\SimpleAlert\\": "src/",
+            "CodeWithDennis\\SimpleAlert\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodeWithDennis\\SimpleAlert\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodeWithDennis\\SimpleAlert\\SimpleAlertServiceProvider"
+            ],
+            "aliases": {
+                "SimpleAlert": "CodeWithDennis\\SimpleAlert\\Facades\\SimpleAlert"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
